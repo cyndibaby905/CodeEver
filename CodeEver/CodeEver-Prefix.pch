@@ -15,4 +15,5 @@
     #import <Foundation/Foundation.h>
     #import "UIImage+Stretch.h"
     #import "CHBaseViewController.h"
+    #import "CHGlobals.h"
 #endif

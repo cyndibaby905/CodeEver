@@ -10,9 +10,10 @@
 
 @class CHAuthenticationViewController;
 @protocol CHAuthenticationViewControllerDelegate<NSObject>
+- (void)authenticationFinished:(CHAuthenticationViewController*)viewController withCode:(NSString*)str;
+- (void)authenticationFailed:(CHAuthenticationViewController*)viewController;
 @optional
 - (void)authenticationCancled:(CHAuthenticationViewController*)viewController;
-- (void)authenticationFinished:(CHAuthenticationViewController*)viewController withRedirectURLString:(NSString*)str;
 @end
 
 @interface CHAuthenticationViewController : CHBaseViewController

@@ -50,6 +50,8 @@
 		773E3A3A187689FB007F3EFE /* SigningInButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 773E3A36187689FB007F3EFE /* SigningInButton@2x.png */; };
 		773E3A3E18768A4C007F3EFE /* UIImage+Stretch.m in Sources */ = {isa = PBXBuildFile; fileRef = 773E3A3D18768A4C007F3EFE /* UIImage+Stretch.m */; };
 		773E3A4118769018007F3EFE /* CHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773E3A4018769018007F3EFE /* CHBaseViewController.m */; };
+		77AFF44B18770EFF0047E530 /* CHGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AFF44A18770EFF0047E530 /* CHGlobals.m */; };
+		77AFF44E187712030047E530 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AFF44D187712030047E530 /* NSString+URLEncoding.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,10 @@
 		773E3A3D18768A4C007F3EFE /* UIImage+Stretch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Stretch.m"; sourceTree = "<group>"; };
 		773E3A3F18769018007F3EFE /* CHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBaseViewController.h; sourceTree = "<group>"; };
 		773E3A4018769018007F3EFE /* CHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBaseViewController.m; sourceTree = "<group>"; };
+		77AFF44918770EFF0047E530 /* CHGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHGlobals.h; sourceTree = "<group>"; };
+		77AFF44A18770EFF0047E530 /* CHGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHGlobals.m; sourceTree = "<group>"; };
+		77AFF44C187712030047E530 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		77AFF44D187712030047E530 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,8 +337,12 @@
 		773E3A3B18768A4C007F3EFE /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				77AFF44C187712030047E530 /* NSString+URLEncoding.h */,
+				77AFF44D187712030047E530 /* NSString+URLEncoding.m */,
 				773E3A3C18768A4C007F3EFE /* UIImage+Stretch.h */,
 				773E3A3D18768A4C007F3EFE /* UIImage+Stretch.m */,
+				77AFF44918770EFF0047E530 /* CHGlobals.h */,
+				77AFF44A18770EFF0047E530 /* CHGlobals.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -441,6 +451,7 @@
 				773E39F918768392007F3EFE /* AFHTTPRequestOperation.m in Sources */,
 				773E366E18767FE2007F3EFE /* main.m in Sources */,
 				773E3A2C1876839E007F3EFE /* UIImage+WebP.m in Sources */,
+				77AFF44B18770EFF0047E530 /* CHGlobals.m in Sources */,
 				773E39FA18768392007F3EFE /* AFHTTPRequestOperationManager.m in Sources */,
 				773E3A291876839E007F3EFE /* UIButton+WebCache.m in Sources */,
 				773E3A261876839E007F3EFE /* SDWebImageDownloaderOperation.m in Sources */,
@@ -457,6 +468,7 @@
 				773E3A231876839E007F3EFE /* SDWebImageCompat.m in Sources */,
 				773E39FF18768392007F3EFE /* AFURLRequestSerialization.m in Sources */,
 				773E3A3E18768A4C007F3EFE /* UIImage+Stretch.m in Sources */,
+				77AFF44E187712030047E530 /* NSString+URLEncoding.m in Sources */,
 				773E3A2A1876839E007F3EFE /* UIImage+GIF.m in Sources */,
 				773E3A2B1876839E007F3EFE /* UIImage+MultiFormat.m in Sources */,
 				773E3A0118768392007F3EFE /* AFURLSessionManager.m in Sources */,
