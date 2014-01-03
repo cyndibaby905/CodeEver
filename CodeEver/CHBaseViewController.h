@@ -1,5 +1,5 @@
 //
-//  CHViewController.h
+//  CHBaseViewController.h
 //  CodeEver
 //
 //  Created by hangchen on 1/3/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CHViewController : CHBaseViewController
+@interface CHBaseViewController : UIViewController
 
 @end

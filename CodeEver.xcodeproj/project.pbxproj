@@ -43,6 +43,13 @@
 		773E3A2B1876839E007F3EFE /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 773E3A1B1876839E007F3EFE /* UIImage+MultiFormat.m */; };
 		773E3A2C1876839E007F3EFE /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 773E3A1D1876839E007F3EFE /* UIImage+WebP.m */; };
 		773E3A2D1876839E007F3EFE /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 773E3A1F1876839E007F3EFE /* UIImageView+WebCache.m */; };
+		773E3A3118768903007F3EFE /* CHAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773E3A3018768903007F3EFE /* CHAuthenticationViewController.m */; };
+		773E3A37187689FB007F3EFE /* SignInButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 773E3A33187689FB007F3EFE /* SignInButton.png */; };
+		773E3A38187689FB007F3EFE /* SignInButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 773E3A34187689FB007F3EFE /* SignInButton@2x.png */; };
+		773E3A39187689FB007F3EFE /* SigningInButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 773E3A35187689FB007F3EFE /* SigningInButton.png */; };
+		773E3A3A187689FB007F3EFE /* SigningInButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 773E3A36187689FB007F3EFE /* SigningInButton@2x.png */; };
+		773E3A3E18768A4C007F3EFE /* UIImage+Stretch.m in Sources */ = {isa = PBXBuildFile; fileRef = 773E3A3D18768A4C007F3EFE /* UIImage+Stretch.m */; };
+		773E3A4118769018007F3EFE /* CHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773E3A4018769018007F3EFE /* CHBaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +129,16 @@
 		773E3A1D1876839E007F3EFE /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		773E3A1E1876839E007F3EFE /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		773E3A1F1876839E007F3EFE /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		773E3A2F18768903007F3EFE /* CHAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAuthenticationViewController.h; sourceTree = "<group>"; };
+		773E3A3018768903007F3EFE /* CHAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAuthenticationViewController.m; sourceTree = "<group>"; };
+		773E3A33187689FB007F3EFE /* SignInButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignInButton.png; sourceTree = "<group>"; };
+		773E3A34187689FB007F3EFE /* SignInButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SignInButton@2x.png"; sourceTree = "<group>"; };
+		773E3A35187689FB007F3EFE /* SigningInButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SigningInButton.png; sourceTree = "<group>"; };
+		773E3A36187689FB007F3EFE /* SigningInButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SigningInButton@2x.png"; sourceTree = "<group>"; };
+		773E3A3C18768A4C007F3EFE /* UIImage+Stretch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Stretch.h"; sourceTree = "<group>"; };
+		773E3A3D18768A4C007F3EFE /* UIImage+Stretch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Stretch.m"; sourceTree = "<group>"; };
+		773E3A3F18769018007F3EFE /* CHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHBaseViewController.h; sourceTree = "<group>"; };
+		773E3A4018769018007F3EFE /* CHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,10 +200,15 @@
 		773E366718767FE2007F3EFE /* CodeEver */ = {
 			isa = PBXGroup;
 			children = (
+				773E3A3B18768A4C007F3EFE /* Util */,
+				773E3A32187689FB007F3EFE /* Resources */,
+				773E3A2E187688C3007F3EFE /* Authentication */,
 				773E367018767FE2007F3EFE /* CHAppDelegate.h */,
 				773E367118767FE2007F3EFE /* CHAppDelegate.m */,
 				773E367918767FE2007F3EFE /* CHViewController.h */,
 				773E367A18767FE2007F3EFE /* CHViewController.m */,
+				773E3A3F18769018007F3EFE /* CHBaseViewController.h */,
+				773E3A4018769018007F3EFE /* CHBaseViewController.m */,
 				773E367C18767FE2007F3EFE /* Images.xcassets */,
 				773E366818767FE2007F3EFE /* Supporting Files */,
 			);
@@ -286,6 +308,35 @@
 			path = SDWebImage/SDWebImage;
 			sourceTree = "<group>";
 		};
+		773E3A2E187688C3007F3EFE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				773E3A2F18768903007F3EFE /* CHAuthenticationViewController.h */,
+				773E3A3018768903007F3EFE /* CHAuthenticationViewController.m */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		773E3A32187689FB007F3EFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				773E3A33187689FB007F3EFE /* SignInButton.png */,
+				773E3A34187689FB007F3EFE /* SignInButton@2x.png */,
+				773E3A35187689FB007F3EFE /* SigningInButton.png */,
+				773E3A36187689FB007F3EFE /* SigningInButton@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		773E3A3B18768A4C007F3EFE /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				773E3A3C18768A4C007F3EFE /* UIImage+Stretch.h */,
+				773E3A3D18768A4C007F3EFE /* UIImage+Stretch.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -363,7 +414,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				773E3A38187689FB007F3EFE /* SignInButton@2x.png in Resources */,
+				773E3A37187689FB007F3EFE /* SignInButton.png in Resources */,
 				773E367D18767FE2007F3EFE /* Images.xcassets in Resources */,
+				773E3A3A187689FB007F3EFE /* SigningInButton@2x.png in Resources */,
+				773E3A39187689FB007F3EFE /* SigningInButton.png in Resources */,
 				773E366C18767FE2007F3EFE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +444,7 @@
 				773E39FA18768392007F3EFE /* AFHTTPRequestOperationManager.m in Sources */,
 				773E3A291876839E007F3EFE /* UIButton+WebCache.m in Sources */,
 				773E3A261876839E007F3EFE /* SDWebImageDownloaderOperation.m in Sources */,
+				773E3A4118769018007F3EFE /* CHBaseViewController.m in Sources */,
 				773E39FC18768392007F3EFE /* AFNetworkReachabilityManager.m in Sources */,
 				773E3A221876839E007F3EFE /* SDImageCache.m in Sources */,
 				773E3A0018768392007F3EFE /* AFURLResponseSerialization.m in Sources */,
@@ -400,11 +456,13 @@
 				773E3A2D1876839E007F3EFE /* UIImageView+WebCache.m in Sources */,
 				773E3A231876839E007F3EFE /* SDWebImageCompat.m in Sources */,
 				773E39FF18768392007F3EFE /* AFURLRequestSerialization.m in Sources */,
+				773E3A3E18768A4C007F3EFE /* UIImage+Stretch.m in Sources */,
 				773E3A2A1876839E007F3EFE /* UIImage+GIF.m in Sources */,
 				773E3A2B1876839E007F3EFE /* UIImage+MultiFormat.m in Sources */,
 				773E3A0118768392007F3EFE /* AFURLSessionManager.m in Sources */,
 				773E3A281876839E007F3EFE /* SDWebImagePrefetcher.m in Sources */,
 				773E3A201876839E007F3EFE /* MKAnnotationView+WebCache.m in Sources */,
+				773E3A3118768903007F3EFE /* CHAuthenticationViewController.m in Sources */,
 				773E3A211876839E007F3EFE /* NSData+GIF.m in Sources */,
 				773E3A271876839E007F3EFE /* SDWebImageManager.m in Sources */,
 				773E367218767FE2007F3EFE /* CHAppDelegate.m in Sources */,
