@@ -52,6 +52,7 @@
 		773E3A4118769018007F3EFE /* CHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773E3A4018769018007F3EFE /* CHBaseViewController.m */; };
 		77AFF44B18770EFF0047E530 /* CHGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AFF44A18770EFF0047E530 /* CHGlobals.m */; };
 		77AFF44E187712030047E530 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AFF44D187712030047E530 /* NSString+URLEncoding.m */; };
+		77F3DD3C187874EE005C9A70 /* CHTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F3DD3B187874EE005C9A70 /* CHTabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,8 @@
 		77AFF44A18770EFF0047E530 /* CHGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHGlobals.m; sourceTree = "<group>"; };
 		77AFF44C187712030047E530 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
 		77AFF44D187712030047E530 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		77F3DD3A187874EE005C9A70 /* CHTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTabBarViewController.h; sourceTree = "<group>"; };
+		77F3DD3B187874EE005C9A70 /* CHTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTabBarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +209,7 @@
 		773E366718767FE2007F3EFE /* CodeEver */ = {
 			isa = PBXGroup;
 			children = (
+				77F3DD39187874C7005C9A70 /* Tabbar */,
 				773E3A3B18768A4C007F3EFE /* Util */,
 				773E3A32187689FB007F3EFE /* Resources */,
 				773E3A2E187688C3007F3EFE /* Authentication */,
@@ -347,6 +351,15 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		77F3DD39187874C7005C9A70 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				77F3DD3A187874EE005C9A70 /* CHTabBarViewController.h */,
+				77F3DD3B187874EE005C9A70 /* CHTabBarViewController.m */,
+			);
+			name = Tabbar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -457,6 +470,7 @@
 				773E3A261876839E007F3EFE /* SDWebImageDownloaderOperation.m in Sources */,
 				773E3A4118769018007F3EFE /* CHBaseViewController.m in Sources */,
 				773E39FC18768392007F3EFE /* AFNetworkReachabilityManager.m in Sources */,
+				77F3DD3C187874EE005C9A70 /* CHTabBarViewController.m in Sources */,
 				773E3A221876839E007F3EFE /* SDImageCache.m in Sources */,
 				773E3A0018768392007F3EFE /* AFURLResponseSerialization.m in Sources */,
 				773E39FE18768392007F3EFE /* AFURLConnectionOperation.m in Sources */,
