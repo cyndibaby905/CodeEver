@@ -52,6 +52,7 @@
 		773E3A4118769018007F3EFE /* CHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 773E3A4018769018007F3EFE /* CHBaseViewController.m */; };
 		7771744E187AADF40059155A /* topBar_Indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 7771744C187AADF40059155A /* topBar_Indicator.png */; };
 		7771744F187AADF40059155A /* topBar_Indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7771744D187AADF40059155A /* topBar_Indicator@2x.png */; };
+		77717452187ABD740059155A /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77717451187ABD740059155A /* KeychainItemWrapper.m */; };
 		77AFF44B18770EFF0047E530 /* CHGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AFF44A18770EFF0047E530 /* CHGlobals.m */; };
 		77AFF44E187712030047E530 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AFF44D187712030047E530 /* NSString+URLEncoding.m */; };
 		77F3DD3C187874EE005C9A70 /* CHTopBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F3DD3B187874EE005C9A70 /* CHTopBarController.m */; };
@@ -146,6 +147,8 @@
 		773E3A4018769018007F3EFE /* CHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHBaseViewController.m; sourceTree = "<group>"; };
 		7771744C187AADF40059155A /* topBar_Indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topBar_Indicator.png; sourceTree = "<group>"; };
 		7771744D187AADF40059155A /* topBar_Indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topBar_Indicator@2x.png"; sourceTree = "<group>"; };
+		77717450187ABD740059155A /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		77717451187ABD740059155A /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		77AFF44918770EFF0047E530 /* CHGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHGlobals.h; sourceTree = "<group>"; };
 		77AFF44A18770EFF0047E530 /* CHGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHGlobals.m; sourceTree = "<group>"; };
 		77AFF44C187712030047E530 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 		773E3A3B18768A4C007F3EFE /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				77717450187ABD740059155A /* KeychainItemWrapper.h */,
+				77717451187ABD740059155A /* KeychainItemWrapper.m */,
 				77AFF44C187712030047E530 /* NSString+URLEncoding.h */,
 				77AFF44D187712030047E530 /* NSString+URLEncoding.m */,
 				773E3A3C18768A4C007F3EFE /* UIImage+Stretch.h */,
@@ -486,6 +491,7 @@
 				773E39FD18768392007F3EFE /* AFSecurityPolicy.m in Sources */,
 				773E39FB18768392007F3EFE /* AFHTTPSessionManager.m in Sources */,
 				773E3A251876839E007F3EFE /* SDWebImageDownloader.m in Sources */,
+				77717452187ABD740059155A /* KeychainItemWrapper.m in Sources */,
 				773E3A2D1876839E007F3EFE /* UIImageView+WebCache.m in Sources */,
 				773E3A231876839E007F3EFE /* SDWebImageCompat.m in Sources */,
 				773E39FF18768392007F3EFE /* AFURLRequestSerialization.m in Sources */,
