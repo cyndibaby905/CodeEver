@@ -16,4 +16,5 @@
     #import "UIImage+Stretch.h"
     #import "CHBaseViewController.h"
     #import "CHGlobals.h"
+    #import "CHTopBarController.h"
 #endif

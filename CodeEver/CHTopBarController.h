@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@class CHTopBarViewController;
+@class CHTopBarController;
+@class CHTopBarItem;
 
 @protocol CHTopBarControllerDelegate <NSObject>
 @optional
-- (void)tabBarController:(CHTopBarViewController *)tabBarController didSelectViewController:(UIViewController *)viewController atIndex:(NSUInteger)index;
+- (void)topBarController:(CHTopBarController *)topBarController didSelectViewController:(UIViewController *)viewController atIndex:(NSUInteger)index;
 @end
 
 @interface CHTopBarController : UIViewController
@@ -27,6 +28,10 @@
 @end
 
 @interface UIViewController (CHTopBarController)
-@property (nonatomic,readonly,retain)CHTopBarViewController *topBarController;
-@property (nonatomic,retain)UIBarItem *topBarItem;
+@property (nonatomic,readonly,retain)CHTopBarController *topBarController;
+@property (nonatomic,retain)CHTopBarItem *topBarItem;
+@end
+
+@interface CHTopBarItem : UIBarButtonItem
+
 @end

@@ -15,7 +15,25 @@
 {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[CHViewController alloc] init];
+    
+    
+    CHViewController *viewController1 = [[CHViewController alloc] init];
+	CHViewController *viewController2 = [[CHViewController alloc] init];
+	CHViewController *viewController3 = [[CHViewController alloc] init];
+	
+	viewController1.topBarItem.title = @"Top 1";
+	viewController2.topBarItem.title = @"Top 2";
+	viewController3.topBarItem.title = @"Top 3";
+    
+    
+	NSArray *viewControllers = @[viewController1, viewController2, viewController3];
+	CHTopBarController *topBarController = [[CHTopBarController alloc] init];
+    
+	topBarController.viewControllers = viewControllers;
+    
+    
+    
+    self.window.rootViewController = topBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
