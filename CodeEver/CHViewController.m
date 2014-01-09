@@ -10,12 +10,16 @@
 #import "UIImageView+WebCache.h"
 #import "AFNetworking.h"
 #import "CHAuthenticationViewController.h"
+#import "KeychainItemWrapper.h"
 
 @interface CHViewController ()<CHAuthenticationViewControllerDelegate>
 - (void)signInAction:(UIButton*)sender;
 @end
 
 @implementation CHViewController
+{
+    KeychainItemWrapper *keychain_;
+}
 
 - (void)viewDidLoad
 {
@@ -23,17 +27,33 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
     
+    
+    keychain_ =[[KeychainItemWrapper alloc] initWithIdentifier:@"githubAuthInfo"accessGroup:nil];
+    
+    NSString *token = [keychain_  objectForKey:(__bridge id)(kSecAttrAccount)];
+
     [self.view addSubview:({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setBackgroundImage:[[UIImage imageNamed:@"SignInButton.png"] stretchableImageByCenter] forState:UIControlStateNormal];
         [button setBackgroundImage:[[UIImage imageNamed:@"SigningInButton.png"] stretchableImageByCenter] forState:UIControlStateHighlighted];
         button.frame = CGRectMake((self.view.bounds.size.width - 100)/2, 200, 100, 46);
-        [button setTitle:NSLocalizedString(@"Sign in", @"") forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(signInAction:) forControlEvents:UIControlEventTouchUpInside];
+        if (![token length]) {
+            [button setTitle:NSLocalizedString(@"Sign in", @"") forState:UIControlStateNormal];
+            [button addTarget:self action:@selector(signInAction:) forControlEvents:UIControlEventTouchUpInside];
+        }
+        else {
+            [button setTitle:NSLocalizedString(@"Fetch info", @"") forState:UIControlStateNormal];
+            [button addTarget:self action:@selector(fetchInfo:) forControlEvents:UIControlEventTouchUpInside];
+        }
         button;
     })];
     
     
+}
+
+- (void)fetchInfo:(UIButton*)sender
+{
+    NSLog(@"Token:%@",[keychain_  objectForKey:(__bridge id)(kSecAttrAccount)]);
 }
 
 - (void)signInAction:(UIButton*)sender
@@ -55,7 +75,9 @@
         NSDictionary *parameters = @{@"client_id": appKey,@"client_secret": secretKey, @"code": str, @"redirect_uri": redirectURL};
         [manager POST:exchangeURL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSString *accessToken = responseObject[@"access_token"];
-            NSLog(@"Token:%@", accessToken);
+            
+            [keychain_ setObject:accessToken forKey:(__bridge id)(kSecAttrAccount)];
+            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:@"Error occured, please try again" delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
             [alertView show];
