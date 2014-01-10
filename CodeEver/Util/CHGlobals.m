@@ -13,3 +13,4 @@ const NSString *redirectURL = @"http://hangchen.info";
 const NSString *scope = @"user,public_repo,repo,repo:status,notifications,gist";
 const NSString *authURL = @"https://github.com/login/oauth/authorize?client_id=%@&redirect_uri=%@&scope=%@&state=%@";
 const NSString *exchangeURL = @"https://github.com/login/oauth/access_token";
+const NSString *userselfURL = @"https://api.github.com/user";

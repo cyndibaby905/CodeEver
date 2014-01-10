@@ -13,4 +13,5 @@ extern NSString *redirectURL;
 extern const NSString *scope;
 extern NSString *authURL;
 extern NSString *exchangeURL;
+extern NSString *userselfURL;
 #define is_iOS7 ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)

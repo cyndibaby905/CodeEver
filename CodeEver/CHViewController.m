@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "CHAuthenticationViewController.h"
 #import "KeychainItemWrapper.h"
+#import "UIImageView+WebCache.h"
 
 @interface CHViewController ()<CHAuthenticationViewControllerDelegate>
 - (void)signInAction:(UIButton*)sender;
@@ -19,6 +20,7 @@
 @implementation CHViewController
 {
     KeychainItemWrapper *keychain_;
+    UIImageView *avatarImgView_;
 }
 
 - (void)viewDidLoad
@@ -44,6 +46,13 @@
         else {
             [button setTitle:NSLocalizedString(@"Fetch info", @"") forState:UIControlStateNormal];
             [button addTarget:self action:@selector(fetchInfo:) forControlEvents:UIControlEventTouchUpInside];
+            
+            
+            avatarImgView_ = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - 64)/2,button.frame.origin.y - 70, 64, 64)];
+            avatarImgView_.image = [UIImage imageNamed:@"user_icon_default"];
+            avatarImgView_.layer.cornerRadius = 32;
+            avatarImgView_.clipsToBounds = YES;
+            [self.view addSubview:avatarImgView_];
         }
         button;
     })];
@@ -53,7 +62,15 @@
 
 - (void)fetchInfo:(UIButton*)sender
 {
-    NSLog(@"Token:%@",[keychain_  objectForKey:(__bridge id)(kSecAttrAccount)]);
+    NSString *token = [keychain_  objectForKey:(__bridge id)(kSecAttrAccount)];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:userselfURL parameters:@{@"access_token":token} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+        [avatarImgView_ setImageWithURL:[NSURL URLWithString:responseObject[@"avatar_url"]] placeholderImage:[UIImage imageNamed:@"user_icon_default"]];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"123");
+    }];
 }
 
 - (void)signInAction:(UIButton*)sender
