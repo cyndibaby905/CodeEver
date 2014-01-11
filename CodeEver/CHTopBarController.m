@@ -24,7 +24,7 @@
 @implementation CHTopBarController
 {
 	UIView *topButtonsContainerView;
-	UIView *contentContainerView;
+	UIScrollView *contentContainerView;
 	UIImageView *indicatorView;
     NSMutableArray *topButtons;
 }
@@ -70,7 +70,11 @@
     
 	rect.origin.y = CHTopBarHeight;
 	rect.size.height = self.view.bounds.size.height - CHTopBarHeight;
-	contentContainerView = [[UIView alloc] initWithFrame:rect];
+	contentContainerView = [[UIScrollView alloc] initWithFrame:rect];
+    contentContainerView.pagingEnabled = YES;
+    contentContainerView.bounces = NO;
+    contentContainerView.delegate = self;
+    contentContainerView.showsHorizontalScrollIndicator = NO;
 	contentContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	[self.view addSubview:contentContainerView];
     
@@ -83,7 +87,13 @@
 - (void)viewWillLayoutSubviews
 {
 	[super viewWillLayoutSubviews];
+    
 	[self layoutTopButtons];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger tempIndex = [scrollView contentOffset].x / (scrollView.bounds.size.width);
+    [self setSelectedIndex:tempIndex animated:YES];
 }
 
 - (void)reloadTopButtons
@@ -183,8 +193,7 @@
 
 - (void)setSelectedIndex:(NSUInteger)newSelectedIndex animated:(BOOL)animated
 {
-	NSAssert(newSelectedIndex < [self.viewControllers count], @"index out of bounds");
-
+    contentContainerView.contentSize = CGSizeMake(self.view.bounds.size.width * self.viewControllers.count, contentContainerView.bounds.size.height);
     
 	if (![self isViewLoaded])
 	{
@@ -202,7 +211,6 @@
 			fromViewController = self.selectedViewController;
 		}
         
-		NSUInteger oldSelectedIndex = _selectedIndex;
 		_selectedIndex = newSelectedIndex;
         
 		UIButton *toButton;
@@ -211,71 +219,39 @@
 			toButton = topButtons[_selectedIndex];
 			[self selectTopButton:toButton];
 			toViewController = self.selectedViewController;
+
+            
 		}
         
-		if (toViewController == nil)
-		{
-			[fromViewController.view removeFromSuperview];
-		}
-		else if (fromViewController == nil)
-		{
-			toViewController.view.frame = contentContainerView.bounds;
-			[contentContainerView addSubview:toViewController.view];
-			[self centerIndicatorOnButton:toButton];
-            
-			if ([self.delegate respondsToSelector:@selector(topBarController:didSelectViewController:atIndex:)]) {
-                [self.delegate topBarController:self didSelectViewController:toViewController atIndex:newSelectedIndex];
+        CGFloat offsetX = 0;
+        for (UIViewController *controller in self.viewControllers) {
+            if (![controller.view superview]) {
+                controller.view.frame = CGRectMake(offsetX, 0, contentContainerView.bounds.size.width, contentContainerView.bounds.size.height);
+                controller.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+                offsetX += contentContainerView.bounds.size.width;
+                [contentContainerView addSubview:controller.view];
             }
-            
-		}
-		else if (animated)
-		{
-			CGRect rect = contentContainerView.bounds;
-			if (oldSelectedIndex < newSelectedIndex)
-				rect.origin.x = rect.size.width;
-			else
-				rect.origin.x = -rect.size.width;
-            
-			toViewController.view.frame = rect;
-			topButtonsContainerView.userInteractionEnabled = NO;
-            
-			[self transitionFromViewController:fromViewController
-                              toViewController:toViewController
-                                      duration:0.3f
-                                       options:UIViewAnimationOptionLayoutSubviews | UIViewAnimationOptionCurveEaseInOut
-                                    animations:^
-             {
-                 CGRect rect = fromViewController.view.frame;
-                 if (oldSelectedIndex < newSelectedIndex)
-                     rect.origin.x = -rect.size.width;
-                 else
-                     rect.origin.x = rect.size.width;
-                 
-                 fromViewController.view.frame = rect;
-                 toViewController.view.frame = contentContainerView.bounds;
-                 [self centerIndicatorOnButton:toButton];
-             }
-                                    completion:^(BOOL finished)
-             {
-                 topButtonsContainerView.userInteractionEnabled = YES;
-                 
-                 if ([self.delegate respondsToSelector:@selector(topBarController:didSelectViewController:atIndex:)]) {
-                     [self.delegate topBarController:self didSelectViewController:toViewController atIndex:newSelectedIndex];
-                 }
-             }];
-		}
-		else
-		{
-			[fromViewController.view removeFromSuperview];
-            
-			toViewController.view.frame = contentContainerView.bounds;
-			[contentContainerView addSubview:toViewController.view];
-			[self centerIndicatorOnButton:toButton];
-            
-			if ([self.delegate respondsToSelector:@selector(topBarController:didSelectViewController:atIndex:)]) {
-                [self.delegate topBarController:self didSelectViewController:toViewController atIndex:newSelectedIndex];
-            }
-		}
+        }
+        
+        
+        
+        
+        if (animated) {
+            [UIView animateWithDuration:0.3 animations:^{
+                [self centerIndicatorOnButton:toButton];
+                [contentContainerView scrollRectToVisible:CGRectMake(_selectedIndex * contentContainerView.bounds.size.width, 0, contentContainerView.bounds.size.width, contentContainerView.bounds.size.height) animated:NO];
+            }];
+        }
+        else {
+            [self centerIndicatorOnButton:toButton];
+            [contentContainerView scrollRectToVisible:CGRectMake(_selectedIndex * contentContainerView.bounds.size.width, 0, contentContainerView.bounds.size.width, contentContainerView.bounds.size.height) animated:animated];
+
+
+        }
+        
+        
+        
+        
 	}
 }
 

@@ -24,6 +24,9 @@
 	viewController1.topBarItem.title = @"Top 1";
 	viewController2.topBarItem.title = @"Top 2";
 	viewController3.topBarItem.title = @"Top 3";
+    viewController1.currentIndex = 1;
+    viewController2.currentIndex = 2;
+    viewController3.currentIndex = 3;
     
     
 	NSArray *viewControllers = @[viewController1, viewController2, viewController3];

@@ -15,7 +15,7 @@
 - (void)topBarController:(CHTopBarController *)topBarController didSelectViewController:(UIViewController *)viewController atIndex:(NSUInteger)index;
 @end
 
-@interface CHTopBarController : UIViewController
+@interface CHTopBarController : UIViewController<UIScrollViewDelegate>
 
 @property (nonatomic, copy) NSArray *viewControllers;
 @property (nonatomic, weak) UIViewController *selectedViewController;
